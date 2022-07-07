@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "306223711828",
+    "project_id": "deep-discount",
+    "storage_bucket": "deep-discount.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306223711828:android:af7a1cf36647d1b88dcfc1",
+        "android_client_info": {
+          "package_name": "in.gopansari.consumersapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306223711828-4583tcudqnbvb2am13u6n1pnve6bo1sv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqzjLaRFmso6_yOjaV8jjT1YO-sZ7aKDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306223711828-4583tcudqnbvb2am13u6n1pnve6bo1sv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306223711828:android:f2509710c7d2ad498dcfc1",
+        "android_client_info": {
+          "package_name": "in.gopansari.merchantapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306223711828-4583tcudqnbvb2am13u6n1pnve6bo1sv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqzjLaRFmso6_yOjaV8jjT1YO-sZ7aKDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306223711828-4583tcudqnbvb2am13u6n1pnve6bo1sv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
