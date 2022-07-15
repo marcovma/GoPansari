@@ -1,3 +1,6 @@
+import 'package:consumers_app/mainScreens/explore_screen.dart';
+import 'package:consumers_app/mainScreens/profile_screen.dart';
+import 'package:consumers_app/mainScreens/shopping_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../authentication/auth_screen.dart';
@@ -13,23 +16,22 @@ class HomeScreen extends StatefulWidget {
 
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<Widget> _pages =[const ShoppingScreen(),const ExploreScreen(),const ProfileScreen()];
+  int _selectedPageIndex= 0;
+  void _selectPage(int index){
+    setState((){
+      _selectedPageIndex=index;
+    });
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         flexibleSpace: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.cyan,
-                  Colors.amber,
-                ],
-                begin:  FractionalOffset(0.0, 0.0),
-                end:  FractionalOffset(1.0, 0.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp,
-              )
-          ),
+          decoration: boxDecorationDesign,
         ),
         title: Text(
           sharedPreferences!.getString("name")!,
@@ -37,18 +39,51 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.cyan,
-          ),
-          onPressed: ()
-          {
-            firebaseAuth.signOut().then((value){
-              Navigator.push(context, MaterialPageRoute(builder: (c)=> const AuthScreen()));
-            });
-          },
-          child: const Text("Logout"),
+      body: _pages[_selectedPageIndex],
+      // Center(
+      //   child: ElevatedButton(
+      //     style: ElevatedButton.styleFrom(
+      //       primary: Colors.cyan,
+      //     ),
+      //     onPressed: ()
+      //     {
+      //       firebaseAuth.signOut().then((value){
+      //         Navigator.push(context, MaterialPageRoute(builder: (c)=> const AuthScreen()));
+      //       });
+      //     },
+      //     child: const Text("Logout"),
+      //   ),
+      // ),
+      bottomNavigationBar: Container(
+        decoration:  boxDecorationDesign,
+        child: BottomNavigationBar(
+          currentIndex: _selectedPageIndex,
+          onTap: _selectPage,
+          showUnselectedLabels: true,
+          backgroundColor: Colors.transparent,
+          type: BottomNavigationBarType.fixed,
+          elevation: 0,
+          unselectedItemColor: Colors.white,
+          selectedItemColor: Colors.redAccent ,
+          iconSize: 28,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag),
+              label:
+              "My Shopping",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.explore_rounded),
+              label:
+              "Explore",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+              label:
+              "Profile",
+
+            ),
+          ],
         ),
       ),
     );

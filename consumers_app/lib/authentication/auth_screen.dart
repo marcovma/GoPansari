@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:consumers_app/authentication/login.dart';
 import 'package:consumers_app/authentication/register.dart';
+import 'package:consumers_app/global/global.dart';
 
 
 class AuthScreen extends StatefulWidget {
@@ -18,18 +19,7 @@ class _AuthScreenState extends State<AuthScreen> {
       child: Scaffold(
         appBar: AppBar(
           flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.cyan,
-                  Colors.amber,
-                ],
-                begin:  FractionalOffset(0.0, 0.0),
-                end:  FractionalOffset(1.0, 0.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp,
-              )
-            ),
+            decoration: boxDecorationDesign
           ),
           automaticallyImplyLeading: false,
           title: const Text(
@@ -57,16 +47,7 @@ class _AuthScreenState extends State<AuthScreen> {
           ),
         ),
         body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Colors.amber,
-                Colors.cyan,
-              ],
-            )
-          ),
+          decoration:boxDecorationDesign,
           child: const TabBarView(
             children: [
               LoginScreen(),

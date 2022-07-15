@@ -97,7 +97,12 @@ class _LoginScreenState extends State<LoginScreen>
             await sharedPreferences!.setString(
                 "name", snapshot.data()!["merchantName"]);
             await sharedPreferences!.setString(
-                "name", snapshot.data()!["storeName"]);
+                "storeName", snapshot.data()!["storeName"]);
+            await sharedPreferences!.setString(
+                "phone", snapshot.data()!["phone"]);
+            await sharedPreferences!.setString(
+                "address", snapshot.data()!["address"]);
+
             Navigator.pop(context);
             Navigator.push(context, MaterialPageRoute(builder: (c)=> const HomeScreen()));
 
@@ -142,6 +147,7 @@ class _LoginScreenState extends State<LoginScreen>
                   controller: emailController,
                   hintText: "Email",
                   isObsecre: false,
+                  keyboard: TextInputType.emailAddress,
                 ),
                 CustomTextField(
                   data: Icons.lock,

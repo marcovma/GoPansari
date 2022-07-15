@@ -135,7 +135,7 @@ class _RegisterScreenState extends State<RegisterScreen>
     sharedPreferences = await SharedPreferences.getInstance();
     await sharedPreferences!.setString("uid", currentUser.uid);
     await sharedPreferences!.setString("email", currentUser.email.toString());
-    await sharedPreferences!.setString("name", phoneController.text.trim());
+    await sharedPreferences!.setString("phone", phoneController.text.trim());
     await sharedPreferences!.setString("name", nameController.text.trim());
 
    // await sharedPreferences!.setString("photoUrl", sellerImageUrl);

@@ -142,6 +142,7 @@ class _LoginScreenState extends State<LoginScreen>
                   controller: emailController,
                   hintText: "Email",
                   isObsecre: false,
+                  keyboard: TextInputType.emailAddress,
                 ),
                 CustomTextField(
                   data: Icons.lock,

@@ -46,18 +46,7 @@ class _MySplashScreenState extends State<MySplashScreen>
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        decoration: const BoxDecoration(
-          gradient:  LinearGradient(
-            colors: [
-              Colors.amber,
-              Colors.cyan,
-            ],
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(1.0, 0.0),
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp,
-          ),
-        ),
+        decoration: boxDecorationDesign,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
